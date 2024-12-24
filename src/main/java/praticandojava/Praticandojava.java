@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -14,7 +15,8 @@ public class Praticandojava {
             System.out.println("2 - Cálculo de área de um quadrado");
             System.out.println("3 - Cálculo de área de um círculo");
             System.out.println("4 - Contagem até 15");
-            System.out.println("5 - Sair");
+            System.out.println("5 - Fibonacci");
+            System.out.println("6 - Sair");
             opcoes = scanner.next();
 
             switch (opcoes) {
@@ -35,6 +37,9 @@ public class Praticandojava {
                     contagemDeNumeros();
                     return;
                 case "5":
+                    fibonacci();
+                    return;
+                case "6":
                     System.out.println("Você saiu!");
                     return;
                 default:
@@ -80,6 +85,25 @@ public class Praticandojava {
     public static void contagemDeNumeros(){
         for(int number = 1; number <= 15; number++){
             System.out.println(number);
+        }
+    }
+
+    public static void fibonacci(){
+        int numA = 0;
+        int numB = 1;
+
+        System.out.print("Digite um número: ");
+        int number = scanner.nextInt();
+
+        if(number > 0) {
+            for (int i = 0; i < number; i++) {
+                System.out.println("Sequência de Fibonacci:" + numA);
+                numB = numA + numB;
+                numA = numB - numA;
+            }
+        }
+        else{
+            System.out.println("Você digitou um número inválido");
         }
     }
 }
