@@ -1,3 +1,4 @@
+package praticandojava;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.lang.Math;
